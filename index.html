@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#002855">
+<title>GCPS Health Sciences — Sports Medicine EOPA 701</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   GCPS HEALTH SCIENCES — LANDING PAGE
+   Theme: GCPS Navy #002855 · Red #cc2529 · Gold #f5a623
+   Fonts: Fraunces (display) + Outfit (body)
+═══════════════════════════════════════════════════ */
+:root {
+  --navy:   #002855;
+  --navy2:  #001a3a;
+  --navy3:  #003570;
+  --red:    #cc2529;
+  --red2:   #a81e21;
+  --gold:   #f5a623;
+  --gold2:  #e8941a;
+  --bg:     #f4f5f7;
+  --bg2:    #ecedf0;
+  --surface:#ffffff;
+  --border: #e0e2e8;
+  --border2:#c8cad2;
+  --text:   #111827;
+  --text2:  #4b5563;
+  --text3:  #9ca3af;
+  --correct:#15803d;
+  --r:      10px;
+  --sat:    env(safe-area-inset-top,0px);
+  --sab:    env(safe-area-inset-bottom,0px);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  font-family:'Outfit',sans-serif;
+  color:var(--text);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ════════ TOPBAR ════════ */
+.topbar{
+  background:var(--navy2);
+  border-bottom:3px solid var(--red);
+  padding:0 clamp(16px,4vw,40px);
+  height:62px;
+  display:flex;align-items:center;gap:14px;
+  position:sticky;top:0;z-index:100;
+}
+.tb-emblem{
+  width:38px;height:38px;flex-shrink:0;
+  background:var(--red);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:900;color:#fff;
+  font-family:'Fraunces',serif;letter-spacing:-.02em;
+  box-shadow:0 0 0 2px rgba(255,255,255,.15);
+}
+.tb-brand{
+  display:flex;flex-direction:column;
+}
+.tb-title{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:1rem;color:#fff;line-height:1.1;
+  letter-spacing:-.01em;
+}
+.tb-title em{font-style:italic;color:var(--gold)}
+.tb-sub{
+  font-size:9px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.38);
+  line-height:1;
+}
+.tb-spacer{flex:1}
+.tb-links{
+  display:flex;gap:4px;align-items:center;
+}
+.tb-link{
+  font-size:11px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;padding:7px 13px;
+  border-radius:6px;border:none;background:transparent;
+  color:rgba(255,255,255,.6);cursor:pointer;
+  transition:all .15s;white-space:nowrap;text-decoration:none;
+}
+.tb-link:hover{background:rgba(255,255,255,.1);color:#fff}
+.tb-link.cta{
+  background:var(--red);color:#fff;
+  box-shadow:0 2px 0 var(--red2);
+}
+.tb-link.cta:hover{background:#d42b2f;transform:translateY(-1px)}
+.tb-link.cta:active{transform:translateY(1px);box-shadow:none}
+
+/* ════════ HERO ════════ */
+.hero{
+  background:var(--navy);
+  padding:clamp(52px,8vw,90px) clamp(20px,5vw,60px) 0;
+  position:relative;overflow:hidden;
+}
+
+/* Geometric background */
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 15% 60%,rgba(204,37,41,.18) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 10%,rgba(245,166,35,.1) 0%,transparent 45%),
+    radial-gradient(ellipse at 50% 100%,rgba(0,53,112,.6) 0%,transparent 60%);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(255,255,255,.018) 60px,rgba(255,255,255,.018) 61px),
+    repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(255,255,255,.01) 60px,rgba(255,255,255,.01) 61px);
+}
+
+.hero-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:40px;
+  align-items:end;position:relative;z-index:1;
+}
+@media(min-width:800px){
+  .hero-inner{grid-template-columns:1fr 380px}
+}
+
+.hero-content{padding-bottom:clamp(40px,6vw,72px)}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(245,166,35,.15);
+  border:1.5px solid rgba(245,166,35,.3);
+  border-radius:50px;padding:5px 14px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:20px;
+}
+.hero-pill::before{content:'★';font-size:10px}
+.hero-h1{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(2.6rem,6.5vw,4.4rem);
+  color:#fff;line-height:1.02;letter-spacing:-.03em;
+  margin-bottom:16px;
+}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-h1 strong{
+  display:block;
+  background:linear-gradient(135deg,var(--red) 0%,#ff6b6b 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-desc{
+  font-size:clamp(14px,2.2vw,17px);color:rgba(255,255,255,.65);
+  max-width:500px;line-height:1.75;margin-bottom:32px;
+}
+.hero-btns{
+  display:flex;gap:12px;flex-wrap:wrap;
+}
+.h-btn{
+  font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;
+  letter-spacing:.04em;padding:14px 26px;border-radius:50px;
+  cursor:pointer;border:none;display:flex;align-items:center;
+  gap:8px;transition:all .18s;text-decoration:none;
+}
+.h-btn.primary{
+  background:var(--red);color:#fff;
+  box-shadow:0 4px 0 var(--red2),0 8px 28px rgba(204,37,41,.35);
+}
+.h-btn.primary:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--red2),0 14px 36px rgba(204,37,41,.4)}
+.h-btn.primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--red2)}
+.h-btn.outline{
+  background:rgba(255,255,255,.08);color:#fff;
+  border:1.5px solid rgba(255,255,255,.2);
+}
+.h-btn.outline:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.35)}
+
+/* Hero stats strip */
+.hero-stats{
+  display:flex;gap:0;
+  margin-top:40px;padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.hs{flex:1;text-align:center;padding:0 8px}
+.hs:not(:last-child){border-right:1px solid rgba(255,255,255,.1)}
+.hs-num{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(1.6rem,4vw,2.2rem);color:var(--gold);line-height:1;
+}
+.hs-lbl{
+  font-size:10px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.38);
+  margin-top:4px;
+}
+
+/* Hero card (right column) */
+.hero-card{
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(16px);
+  border:1.5px solid rgba(255,255,255,.12);
+  border-radius:16px 16px 0 0;
+  padding:24px 22px;
+  align-self:end;
+}
+.hc-label{
+  font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:12px;
+  display:flex;align-items:center;gap:6px;
+}
+.hc-label::before{content:'';width:20px;height:2px;background:var(--gold);border-radius:2px}
+.hc-item{
+  display:flex;align-items:center;gap:11px;
+  padding:10px 12px;border-radius:8px;
+  margin-bottom:7px;cursor:pointer;
+  background:rgba(255,255,255,.05);
+  border:1.5px solid rgba(255,255,255,.08);
+  transition:all .15s;text-decoration:none;
+}
+.hc-item:hover{
+  background:rgba(255,255,255,.11);
+  border-color:rgba(255,255,255,.2);
+  transform:translateX(4px);
+}
+.hc-item:last-child{margin-bottom:0}
+.hci-icon{font-size:1.3rem;flex-shrink:0}
+.hci-text{}
+.hci-name{
+  font-size:13px;font-weight:700;color:#fff;margin-bottom:1px;
+}
+.hci-sub{font-size:11px;color:rgba(255,255,255,.45);font-weight:500}
+.hci-arrow{
+  margin-left:auto;color:rgba(255,255,255,.3);
+  font-size:14px;flex-shrink:0;transition:color .15s;
+}
+.hc-item:hover .hci-arrow{color:var(--gold)}
+
+/* ════════ MARQUEE STRIP ════════ */
+.marquee-strip{
+  background:var(--red);
+  overflow:hidden;padding:10px 0;
+  border-bottom:3px solid var(--red2);
+}
+.marquee-inner{
+  display:flex;gap:0;
+  animation:marquee 30s linear infinite;
+  white-space:nowrap;width:max-content;
+}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{
+  font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.85);
+  padding:0 24px;
+  display:flex;align-items:center;gap:10px;
+  border-right:1px solid rgba(255,255,255,.2);
+}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);flex-shrink:0}
+
+/* ════════ SECTION BASE ════════ */
+.section{
+  padding:clamp(48px,8vw,80px) clamp(20px,5vw,60px);
+  max-width:1100px;margin:0 auto;
+}
+.section-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--red);
+  display:flex;align-items:center;gap:8px;margin-bottom:8px;
+}
+.section-eyebrow::before{content:'';width:24px;height:2px;background:var(--red);border-radius:2px}
+.section-title{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(1.8rem,4.5vw,2.8rem);
+  color:var(--navy);line-height:1.1;letter-spacing:-.02em;
+  margin-bottom:10px;
+}
+.section-sub{
+  font-size:clamp(13px,2vw,15px);color:var(--text2);
+  max-width:560px;line-height:1.75;margin-bottom:36px;
+}
+
+/* ════════ RESOURCE CARDS ════════ */
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:16px;
+}
+.resource-card{
+  background:var(--surface);border:2px solid var(--border);
+  border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:all .2s;
+  position:relative;
+}
+.resource-card:hover{
+  border-color:var(--border2);
+  transform:translateY(-4px);
+  box-shadow:0 12px 36px rgba(0,0,0,.1);
+}
+.rc-top{
+  padding:22px 22px 16px;
+  border-bottom:2px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.rc-top::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--rc-col,var(--navy));
+}
+.rc-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 10px;border-radius:50px;margin-bottom:10px;
+  background:rgba(0,40,85,.08);color:var(--navy);border:1.5px solid rgba(0,40,85,.15);
+}
+.rc-icon{font-size:2rem;margin-bottom:8px;display:block}
+.rc-title{
+  font-family:'Fraunces',serif;font-weight:700;
+  font-size:1.1rem;color:var(--navy);line-height:1.25;margin-bottom:5px;
+}
+.rc-sub{font-size:12.5px;color:var(--text2);line-height:1.55}
+.rc-body{
+  padding:16px 22px;flex:1;
+  display:flex;flex-direction:column;gap:10px;
+}
+.rc-feature{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:12.5px;color:var(--text2);line-height:1.5;
+}
+.rc-feature::before{
+  content:'✓';color:var(--correct);font-weight:800;
+  font-size:11px;flex-shrink:0;margin-top:2px;
+}
+.rc-footer{
+  padding:14px 22px;
+  border-top:2px solid var(--border);
+  display:flex;gap:8px;
+}
+.rc-btn{
+  font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;
+  padding:9px 16px;border-radius:50px;cursor:pointer;
+  transition:all .14s;border:2px solid var(--border);
+  background:var(--bg);color:var(--text2);
+  text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+  flex:1;justify-content:center;
+}
+.rc-btn:hover{border-color:var(--navy);color:var(--navy);background:#f0f4ff}
+.rc-btn.primary{
+  background:var(--navy);border-color:var(--navy);color:#fff;
+  box-shadow:0 3px 0 var(--navy2);
+}
+.rc-btn.primary:hover{background:var(--navy3);border-color:var(--navy3)}
+.rc-btn.primary:active{transform:translateY(2px);box-shadow:none}
+
+/* ════════ FEATURED — PRACTICE TEST ════════ */
+.featured-band{
+  background:var(--navy);
+  padding:clamp(48px,7vw,72px) clamp(20px,5vw,60px);
+}
+.featured-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:32px;
+  align-items:center;
+}
+@media(min-width:760px){
+  .featured-inner{grid-template-columns:1fr 1fr}
+}
+.fi-content{}
+.fi-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.fi-title{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:10px;
+}
+.fi-title em{font-style:italic;color:var(--gold)}
+.fi-sub{
+  font-size:14px;color:rgba(255,255,255,.6);
+  line-height:1.75;margin-bottom:28px;max-width:440px;
+}
+.fi-btns{display:flex;gap:10px;flex-wrap:wrap}
+.fi-btn{
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;
+  padding:13px 24px;border-radius:50px;cursor:pointer;
+  transition:all .15s;border:none;text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;
+}
+.fi-btn.a{
+  background:var(--red);color:#fff;
+  box-shadow:0 3px 0 var(--red2);
+}
+.fi-btn.a:hover{transform:translateY(-1px)}
+.fi-btn.a:active{transform:translateY(2px);box-shadow:none}
+.fi-btn.b{
+  background:rgba(255,255,255,.1);color:#fff;
+  border:1.5px solid rgba(255,255,255,.2);
+}
+.fi-btn.b:hover{background:rgba(255,255,255,.18)}
+
+/* Feature list */
+.fi-list{display:flex;flex-direction:column;gap:10px}
+.fi-item{
+  display:flex;align-items:flex-start;gap:12px;
+  background:rgba(255,255,255,.06);
+  border:1.5px solid rgba(255,255,255,.1);
+  border-radius:var(--r);padding:14px 16px;
+}
+.fi-item-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.fi-item-title{
+  font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;
+}
+.fi-item-sub{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
+
+/* ════════ DOK SECTION ════════ */
+.dok-section{
+  background:var(--bg2);
+  border-top:2px solid var(--border);
+  border-bottom:2px solid var(--border);
+  padding:clamp(48px,7vw,72px) clamp(20px,5vw,60px);
+}
+.dok-inner{max-width:1100px;margin:0 auto}
+.dok-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;margin-top:32px;
+}
+.dok-card{
+  background:var(--surface);
+  border:2px solid var(--border);
+  border-radius:14px;padding:24px 20px;
+  position:relative;overflow:hidden;
+  transition:all .2s;
+}
+.dok-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.dok-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:4px;
+}
+.dok-card.d1::before{background:var(--correct)}
+.dok-card.d2::before{background:var(--gold)}
+.dok-card.d3::before{background:var(--red)}
+.dok-num{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:3.5rem;color:var(--border);
+  position:absolute;top:16px;right:16px;line-height:1;
+}
+.dok-label{
+  font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:8px;
+}
+.dok-card.d1 .dok-label{color:var(--correct)}
+.dok-card.d2 .dok-label{color:var(--gold2)}
+.dok-card.d3 .dok-label{color:var(--red)}
+.dok-title{
+  font-family:'Fraunces',serif;font-weight:700;
+  font-size:1.25rem;color:var(--navy);margin-bottom:8px;
+}
+.dok-desc{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:14px}
+.dok-example{
+  font-size:12px;color:var(--text2);line-height:1.55;
+  padding:10px 12px;border-radius:7px;
+  border-left:3px solid var(--border2);
+  background:var(--bg);
+  font-style:italic;
+}
+.dok-card.d1 .dok-example{border-left-color:var(--correct)}
+.dok-card.d2 .dok-example{border-left-color:var(--gold)}
+.dok-card.d3 .dok-example{border-left-color:var(--red)}
+
+/* ════════ DOMAIN STRIP ════════ */
+.domain-section{
+  padding:clamp(48px,7vw,72px) clamp(20px,5vw,60px);
+}
+.domain-inner{max-width:1100px;margin:0 auto}
+.domain-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+  gap:10px;margin-top:32px;
+}
+.domain-pill{
+  background:var(--surface);
+  border:2px solid var(--border);
+  border-top:4px solid var(--dc,var(--navy));
+  border-radius:var(--r);
+  padding:13px 10px;text-align:center;
+  transition:all .18s;cursor:default;
+}
+.domain-pill:hover{
+  border-color:var(--dc,var(--navy));
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+.dp-pct{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:1.6rem;color:var(--dc,var(--navy));line-height:1;
+}
+.dp-code{
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dc,var(--navy));margin:2px 0;
+}
+.dp-name{font-size:11px;font-weight:600;color:var(--text2);line-height:1.3}
+
+/* ════════ HOW IT WORKS ════════ */
+.steps-section{
+  background:var(--navy);
+  padding:clamp(48px,7vw,72px) clamp(20px,5vw,60px);
+}
+.steps-inner{max-width:1100px;margin:0 auto}
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2px;margin-top:32px;
+  background:rgba(255,255,255,.08);
+  border-radius:14px;overflow:hidden;
+  border:1.5px solid rgba(255,255,255,.1);
+}
+.step{
+  padding:28px 24px;
+  background:rgba(255,255,255,.04);
+  transition:background .15s;
+  position:relative;
+}
+.step:hover{background:rgba(255,255,255,.08)}
+.step-num{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:2.8rem;color:rgba(255,255,255,.08);
+  line-height:1;position:absolute;top:16px;right:18px;
+}
+.step-icon{font-size:1.8rem;margin-bottom:12px}
+.step-title{
+  font-family:'Fraunces',serif;font-weight:700;
+  font-size:1.05rem;color:#fff;margin-bottom:6px;
+}
+.step-desc{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.6}
+.step-connector{
+  position:absolute;right:-1px;top:50%;transform:translateY(-50%);
+  width:2px;height:40%;background:rgba(255,255,255,.1);
+  display:none;
+}
+@media(min-width:600px){.step-connector{display:block}}
+
+/* ════════ CTA BAND ════════ */
+.cta-band{
+  padding:clamp(52px,8vw,80px) clamp(20px,5vw,60px);
+  text-align:center;
+  background:var(--bg);
+  border-top:2px solid var(--border);
+}
+.cta-inner{max-width:600px;margin:0 auto}
+.cta-icon{font-size:3rem;margin-bottom:16px}
+.cta-title{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(1.8rem,5vw,2.8rem);
+  color:var(--navy);line-height:1.1;margin-bottom:10px;
+}
+.cta-sub{
+  font-size:14px;color:var(--text2);line-height:1.75;
+  margin-bottom:28px;
+}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-btn{
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:14px 28px;border-radius:50px;cursor:pointer;
+  transition:all .15s;border:none;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.cta-btn.a{
+  background:var(--navy);color:#fff;
+  box-shadow:0 4px 0 var(--navy2),0 8px 24px rgba(0,40,85,.25);
+}
+.cta-btn.a:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--navy2),0 12px 32px rgba(0,40,85,.3)}
+.cta-btn.a:active{transform:translateY(2px);box-shadow:0 2px 0 var(--navy2)}
+.cta-btn.b{
+  background:var(--surface);color:var(--navy);
+  border:2px solid var(--border2);
+}
+.cta-btn.b:hover{border-color:var(--navy);background:#f0f4ff}
+
+/* ════════ FOOTER ════════ */
+.footer{
+  background:var(--navy2);
+  border-top:3px solid var(--red);
+  padding:36px clamp(20px,5vw,60px) calc(36px + env(safe-area-inset-bottom,0px));
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;flex-wrap:wrap;gap:24px;
+  justify-content:space-between;align-items:center;
+}
+.footer-brand{}
+.fb-name{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:1.05rem;color:#fff;margin-bottom:3px;
+}
+.fb-name em{font-style:italic;color:var(--gold)}
+.fb-sub{font-size:11px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.06em}
+.footer-links{
+  display:flex;gap:6px;flex-wrap:wrap;
+}
+.fl{
+  font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 13px;border-radius:5px;
+  color:rgba(255,255,255,.5);text-decoration:none;cursor:pointer;
+  background:rgba(255,255,255,.06);transition:all .15s;
+}
+.fl:hover{background:rgba(255,255,255,.12);color:#fff}
+.footer-copy{
+  width:100%;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:11px;color:rgba(255,255,255,.25);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+
+/* ════════ ANIMATIONS ════════ */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.anim{opacity:0;animation:fadeUp .5s ease forwards}
+.anim-d1{animation-delay:.1s}
+.anim-d2{animation-delay:.2s}
+.anim-d3{animation-delay:.3s}
+.anim-d4{animation-delay:.4s}
+
+/* Scroll-triggered */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ════════ RESPONSIVE ════════ */
+@media(max-width:520px){
+  .tb-links .tb-link:not(.cta){display:none}
+  .hero-stats{gap:0}
+  .hs-num{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ TOPBAR ════════════════ -->
+<header class="topbar">
+  <div class="tb-emblem">G</div>
+  <div class="tb-brand">
+    <div class="tb-title">GCPS <em>Health</em> Sciences</div>
+    <div class="tb-sub">Sports Medicine Pathway</div>
+  </div>
+  <div class="tb-spacer"></div>
+  <nav class="tb-links">
+    <a href="#resources" class="tb-link">Resources</a>
+    <a href="#domains" class="tb-link">Domains</a>
+    <a href="#dok" class="tb-link">DOK Levels</a>
+    <a href="gcps_sports_medicine.html" class="tb-link cta">🎯 Start Practice</a>
+  </nav>
+</header>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content anim">
+      <div class="hero-pill">EOPA Exam 701 Prep · Gwinnett County</div>
+      <h1 class="hero-h1">
+        Sports
+        <em>Medicine</em>
+        <strong>EOPA Ready.</strong>
+      </h1>
+      <p class="hero-desc">Gwinnett County Public Schools Health Sciences students — your complete EOPA 701 preparation suite. Diagnostic test, 60-question practice test, interactive study module, and teacher resource pack — all in one place.</p>
+      <div class="hero-btns">
+        <a href="gcps_sports_medicine.html" class="h-btn primary">🎯 Take Diagnostic Test</a>
+        <a href="#resources" class="h-btn outline">View All Resources ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hs"><div class="hs-num">12</div><div class="hs-lbl">Standards</div></div>
+        <div class="hs"><div class="hs-num">137</div><div class="hs-lbl">Questions</div></div>
+        <div class="hs"><div class="hs-num">60</div><div class="hs-lbl">Practice Qs</div></div>
+        <div class="hs"><div class="hs-num">3</div><div class="hs-lbl">DOK Levels</div></div>
+      </div>
+    </div>
+
+    <!-- Quick-access card -->
+    <div class="hero-card anim anim-d2">
+      <div class="hc-label">Quick Access</div>
+      <a href="gcps_sports_medicine.html" class="hc-item">
+        <div class="hci-icon">🎯</div>
+        <div class="hci-text">
+          <div class="hci-name">Diagnostic Test</div>
+          <div class="hci-sub">24 questions · All standards</div>
+        </div>
+        <div class="hci-arrow">→</div>
+      </a>
+      <a href="gcps_sports_medicine.html" class="hc-item">
+        <div class="hci-icon">📝</div>
+        <div class="hci-text">
+          <div class="hci-name">60-Question Practice Test</div>
+          <div class="hci-sub">DOK 1–3 · Timed · With rationale</div>
+        </div>
+        <div class="hci-arrow">→</div>
+      </a>
+      <a href="eopa_learning_module.html" class="hc-item">
+        <div class="hci-icon">🎮</div>
+        <div class="hci-text">
+          <div class="hci-name">Interactive Study Module</div>
+          <div class="hci-sub">Gamified · Powerups · Badges</div>
+        </div>
+        <div class="hci-arrow">→</div>
+      </a>
+      <a href="sports_medicine_teacher_resource.html" class="hc-item">
+        <div class="hci-icon">📖</div>
+        <div class="hci-text">
+          <div class="hci-name">Teacher Resource Pack</div>
+          <div class="hci-sub">Study guide · Flashcards · Sample Qs</div>
+        </div>
+        <div class="hci-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ MARQUEE ════════════════ -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <!-- Repeated twice for seamless loop -->
+    <div class="marquee-item"><div class="marquee-dot"></div>FUND — Fundamentals</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>PSYC — Sports Psychology</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>HEAL — Injury &amp; Healing · 12%</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>HEAD — Head &amp; Neck</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>NUTR — Sports Nutrition</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>BODY — Body Composition</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>LOEX — Lower Extremity · 19%</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>PERF — Performance Enhancement</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>STRN — Strength &amp; Ergogenic Aids</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>UPEX — Upper Extremity</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>INJR — Common Injuries &amp; First Aid</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>REHB — Rehabilitation &amp; Modalities</div>
+    <!-- Duplicate for loop -->
+    <div class="marquee-item"><div class="marquee-dot"></div>FUND — Fundamentals</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>PSYC — Sports Psychology</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>HEAL — Injury &amp; Healing · 12%</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>HEAD — Head &amp; Neck</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>NUTR — Sports Nutrition</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>BODY — Body Composition</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>LOEX — Lower Extremity · 19%</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>PERF — Performance Enhancement</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>STRN — Strength &amp; Ergogenic Aids</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>UPEX — Upper Extremity</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>INJR — Common Injuries &amp; First Aid</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>REHB — Rehabilitation &amp; Modalities</div>
+  </div>
+</div>
+
+<!-- ════════════════ RESOURCES ════════════════ -->
+<div id="resources">
+<div class="section reveal">
+  <div class="section-eyebrow">Study Tools</div>
+  <h2 class="section-title">Three tools to pass your EOPA</h2>
+  <p class="section-sub">Three powerful tools built specifically for GCPS Health Sciences students. Start with the diagnostic to find your gaps, then use the study module and teacher resource to master every standard.</p>
+
+  <div class="resource-grid">
+
+    <!-- Diagnostic Test -->
+    <div class="resource-card reveal" style="--rc-col:#cc2529">
+      <div class="rc-top">
+        <div class="rc-badge">⭐ Start Here</div>
+        <span class="rc-icon">🎯</span>
+        <div class="rc-title">Diagnostic Test</div>
+        <div class="rc-sub">Find out exactly where you stand across all 12 standards before you start studying.</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-feature">24 questions covering all 12 EOPA standards</div>
+        <div class="rc-feature">Domain-by-domain performance map</div>
+        <div class="rc-feature">Personalized study recommendations</div>
+        <div class="rc-feature">Takes under 10 minutes</div>
+      </div>
+      <div class="rc-footer">
+        <a href="gcps_sports_medicine.html" class="rc-btn primary">Take Diagnostic →</a>
+      </div>
+    </div>
+
+    <!-- 60-Q Practice Test -->
+    <div class="resource-card reveal" style="--rc-col:#002855">
+      <div class="rc-top">
+        <div class="rc-badge">Practice Test</div>
+        <span class="rc-icon">📝</span>
+        <div class="rc-title">60-Question Practice Test</div>
+        <div class="rc-sub">Full-length practice test spanning DOK Level 1 through 3, weighted to match the real EOPA exam.</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-feature">60 questions · DOK 1, 2, and 3</div>
+        <div class="rc-feature">Proportional to real EOPA exam weights</div>
+        <div class="rc-feature">Answer rationale after every question</div>
+        <div class="rc-feature">Live timer + keyboard shortcuts</div>
+      </div>
+      <div class="rc-footer">
+        <a href="gcps_sports_medicine.html" class="rc-btn primary">Start Practice Test →</a>
+      </div>
+    </div>
+
+    <!-- Interactive Module -->
+    <div class="resource-card reveal" style="--rc-col:#f5a623">
+      <div class="rc-top">
+        <div class="rc-badge">🎮 Gamified</div>
+        <span class="rc-icon">⚡</span>
+        <div class="rc-title">Interactive Study Module</div>
+        <div class="rc-sub">Gimkit-style learning game with XP, powerups, streaks, and a mastery check for each standard.</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-feature">12 unlockable standard modules</div>
+        <div class="rc-feature">Earn XP, level up, unlock powerups</div>
+        <div class="rc-feature">90% mastery check to earn badges</div>
+        <div class="rc-feature">AI tutor (Dr. Morgan) built in</div>
+      </div>
+      <div class="rc-footer">
+        <a href="eopa_learning_module.html" class="rc-btn primary">Open Module →</a>
+      </div>
+    </div>
+
+    <!-- Teacher Resource -->
+    <div class="resource-card reveal" style="--rc-col:#15803d">
+      <div class="rc-top">
+        <div class="rc-badge">📖 For Students &amp; Teachers</div>
+        <span class="rc-icon">📚</span>
+        <div class="rc-title">Teacher Resource Pack</div>
+        <div class="rc-sub">Complete study guide with key concepts, vocab flashcards, sample questions, and guided note space.</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-feature">All 12 standards with key concepts</div>
+        <div class="rc-feature">166 vocabulary flashcards (interactive)</div>
+        <div class="rc-feature">36 sample questions with answer keys</div>
+        <div class="rc-feature">Print-ready for binders</div>
+      </div>
+      <div class="rc-footer">
+        <a href="sports_medicine_teacher_resource.html" class="rc-btn primary">Open Resource →</a>
+        <a href="sports_medicine_teacher_resource.html" class="rc-btn" onclick="event.preventDefault();window.open('sports_medicine_teacher_resource.html').print()">🖨 Print PDF</a>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+</div>
+
+<!-- ════════════════ FEATURED — PRACTICE TEST ════════════════ -->
+<div class="featured-band">
+  <div class="featured-inner">
+    <div class="fi-content reveal">
+      <div class="fi-eyebrow">Featured Tool</div>
+      <h2 class="fi-title">Practice like the real <em>EOPA</em></h2>
+      <p class="fi-sub">The 60-question practice test is built to mirror the actual exam — same domains, same percentages, same question types. Take it timed to simulate real test conditions.</p>
+      <div class="fi-btns">
+        <a href="gcps_sports_medicine.html" class="fi-btn a">📝 Start Practice Test</a>
+        <a href="gcps_sports_medicine.html" class="fi-btn b">🎯 Take Diagnostic First</a>
+      </div>
+    </div>
+    <div class="fi-list reveal">
+      <div class="fi-item">
+        <div class="fi-item-icon">📊</div>
+        <div>
+          <div class="fi-item-title">Domain Performance Breakdown</div>
+          <div class="fi-item-sub">See your score for every standard after the test — instantly know what to study next.</div>
+        </div>
+      </div>
+      <div class="fi-item">
+        <div class="fi-item-icon">🎯</div>
+        <div>
+          <div class="fi-item-title">DOK Level Analysis</div>
+          <div class="fi-item-sub">Separate scores for Recall, Application, and Analysis questions — find your weak level.</div>
+        </div>
+      </div>
+      <div class="fi-item">
+        <div class="fi-item-icon">💡</div>
+        <div>
+          <div class="fi-item-title">Rationale for Every Question</div>
+          <div class="fi-item-sub">Every wrong answer shows you exactly why the correct answer is right — not just what it is.</div>
+        </div>
+      </div>
+      <div class="fi-item">
+        <div class="fi-item-icon">⌨️</div>
+        <div>
+          <div class="fi-item-title">Keyboard Shortcuts</div>
+          <div class="fi-item-sub">Press A, B, C, D to select answers and Enter to confirm — just like a testing platform.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ DOK LEVELS ════════════════ -->
+<div id="dok" class="dok-section">
+  <div class="dok-inner">
+    <div class="section-eyebrow reveal">Depth of Knowledge</div>
+    <h2 class="section-title reveal">Understanding DOK Levels</h2>
+    <p class="section-sub reveal">The EOPA uses three levels of thinking. Knowing the difference helps you study smarter — not just memorize facts.</p>
+    <div class="dok-grid">
+      <div class="dok-card d1 reveal">
+        <div class="dok-num">1</div>
+        <div class="dok-label">DOK Level 1</div>
+        <div class="dok-title">Recall &amp; Reproduce</div>
+        <div class="dok-desc">Remember facts, definitions, and basic procedures. These questions test whether you know the content.</div>
+        <div class="dok-example">"What does RICE stand for?" · "Which ligament does valgus stress test?" · "Define hyponatremia."</div>
+      </div>
+      <div class="dok-card d2 reveal">
+        <div class="dok-num">2</div>
+        <div class="dok-label">DOK Level 2</div>
+        <div class="dok-title">Skills &amp; Concepts</div>
+        <div class="dok-desc">Apply knowledge, compare ideas, explain how or why something works. These go beyond simple recall.</div>
+        <div class="dok-example">"Why does cryotherapy reduce swelling?" · "How does Wolff's Law apply to rehab?" · "What causes hyponatremia?"</div>
+      </div>
+      <div class="dok-card d3 reveal">
+        <div class="dok-num">3</div>
+        <div class="dok-label">DOK Level 3</div>
+        <div class="dok-title">Strategic Thinking</div>
+        <div class="dok-desc">Analyze scenarios, evaluate options, draw conclusions. The hardest questions — and worth the most on the exam.</div>
+        <div class="dok-example">"Which finding BEST indicates a Grade III ACL tear?" · "An athlete presents with… what is the MOST appropriate action?"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ DOMAIN COVERAGE ════════════════ -->
+<div id="domains">
+<div class="domain-section">
+  <div class="domain-inner">
+    <div class="section-eyebrow reveal">Exam Coverage</div>
+    <h2 class="section-title reveal">All 12 Standards Covered</h2>
+    <p class="section-sub reveal">Every EOPA standard is in every resource. The number shows how much of the exam each domain covers — <strong>Standard 7 alone is 19%</strong>.</p>
+    <div class="domain-grid reveal">
+      <div class="domain-pill" style="--dc:#4f46e5"><div class="dp-pct">6%</div><div class="dp-code">FUND</div><div class="dp-name">Fundamentals</div></div>
+      <div class="domain-pill" style="--dc:#7c3aed"><div class="dp-pct">4%</div><div class="dp-code">PSYC</div><div class="dp-name">Sports Psychology</div></div>
+      <div class="domain-pill" style="--dc:#dc2626"><div class="dp-pct">12%</div><div class="dp-code">HEAL</div><div class="dp-name">Injury &amp; Healing</div></div>
+      <div class="domain-pill" style="--dc:#ea580c"><div class="dp-pct">8%</div><div class="dp-code">HEAD</div><div class="dp-name">Head &amp; Neck</div></div>
+      <div class="domain-pill" style="--dc:#ca8a04"><div class="dp-pct">4%</div><div class="dp-code">NUTR</div><div class="dp-name">Nutrition</div></div>
+      <div class="domain-pill" style="--dc:#16a34a"><div class="dp-pct">4%</div><div class="dp-code">BODY</div><div class="dp-name">Body Composition</div></div>
+      <div class="domain-pill" style="--dc:#0369a1"><div class="dp-pct">19%</div><div class="dp-code">LOEX</div><div class="dp-name">Lower Extremity</div></div>
+      <div class="domain-pill" style="--dc:#0891b2"><div class="dp-pct">8%</div><div class="dp-code">PERF</div><div class="dp-name">Performance</div></div>
+      <div class="domain-pill" style="--dc:#7e22ce"><div class="dp-pct">8%</div><div class="dp-code">STRN</div><div class="dp-name">Strength &amp; Aids</div></div>
+      <div class="domain-pill" style="--dc:#be185d"><div class="dp-pct">9%</div><div class="dp-code">UPEX</div><div class="dp-name">Upper Extremity</div></div>
+      <div class="domain-pill" style="--dc:#15803d"><div class="dp-pct">9%</div><div class="dp-code">INJR</div><div class="dp-name">First Aid</div></div>
+      <div class="domain-pill" style="--dc:#0e7490"><div class="dp-pct">9%</div><div class="dp-code">REHB</div><div class="dp-name">Rehabilitation</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ════════════════ HOW IT WORKS ════════════════ -->
+<div class="steps-section">
+  <div class="steps-inner">
+    <div class="section-eyebrow reveal" style="color:var(--gold)">Study Plan</div>
+    <h2 class="section-title reveal" style="color:#fff">How to use these resources</h2>
+    <p class="section-sub reveal" style="color:rgba(255,255,255,.55)">Follow this order for the most effective EOPA prep.</p>
+    <div class="steps-grid reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">🎯</div>
+        <div class="step-title">Take the Diagnostic</div>
+        <div class="step-desc">24 questions — discover which of the 12 standards you already know and which need work.</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-icon">📚</div>
+        <div class="step-title">Study Weak Domains</div>
+        <div class="step-desc">Use the Teacher Resource Pack's study guide and flashcards to fill gaps the diagnostic found.</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">🎮</div>
+        <div class="step-title">Play the Module</div>
+        <div class="step-desc">Work through the Interactive Study Module — earn badges by hitting 90% on each standard's mastery check.</div>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-icon">📝</div>
+        <div class="step-title">Take Practice Test</div>
+        <div class="step-desc">Do the full 60-question timed test. Review every wrong answer and the rationale behind it.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ CTA ════════════════ -->
+<div class="cta-band">
+  <div class="cta-inner reveal">
+    <div class="cta-icon">🏆</div>
+    <h2 class="cta-title">Ready to get EOPA ready?</h2>
+    <p class="cta-sub">Start with the 24-question diagnostic — it takes less than 10 minutes and gives you a personalized roadmap for exactly what to study.</p>
+    <div class="cta-btns">
+      <a href="gcps_sports_medicine.html" class="cta-btn a">🎯 Take the Diagnostic</a>
+      <a href="sports_medicine_teacher_resource.html" class="cta-btn b">📚 Teacher Resource</a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fb-name">GCPS <em>Health</em> Sciences</div>
+      <div class="fb-sub">Sports Medicine · EOPA 701 · Exam Preparation</div>
+    </div>
+    <div class="footer-links">
+      <a href="gcps_sports_medicine.html" class="fl">Diagnostic & Practice</a>
+      <a href="eopa_learning_module.html" class="fl">Study Module</a>
+      <a href="sports_medicine_teacher_resource.html" class="fl">Teacher Resource</a>
+    </div>
+    <div class="footer-copy">
+      <span>© Gwinnett County Public Schools — Health Sciences Department</span>
+      <span>For educational use · Sports Medicine EOPA 701</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ─────────────────────────────────────────────
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Stagger children if it's a grid
+      const children = e.target.querySelectorAll('.resource-card, .dok-card, .domain-pill, .fi-item, .step, .rc-feature');
+      children.forEach((c, i) => {
+        c.style.transitionDelay = (i * 60) + 'ms';
+      });
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => revealObs.observe(el));
+
+// ── Topbar active link ─────────────────────────────────────────
+// Topbar highlight on scroll
+const tbLinks = document.querySelectorAll('.tb-link:not(.cta)');
+const secIds  = ['resources','dok','domains'];
+const secObs  = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id;
+    tbLinks.forEach(l => l.classList.remove('active'));
+    const match = document.querySelector('.tb-link[href="#' + id + '"]');
+    if (match) match.classList.add('active');
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('#resources, #dok, #domains').forEach(s => secObs.observe(s));
+
+// ── Smooth scroll for anchor links ────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href.length > 1) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ── Domain pills — subtle tilt on hover ───────────────────────
+document.querySelectorAll('.domain-pill').forEach(pill => {
+  pill.addEventListener('mousemove', e => {
+    const rect = pill.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top)  / rect.height - 0.5;
+    pill.style.transform = `translateY(-2px) rotateX(${-y*8}deg) rotateY(${x*8}deg)`;
+    pill.style.transition = 'transform .1s ease';
+  });
+  pill.addEventListener('mouseleave', () => {
+    pill.style.transform = '';
+    pill.style.transition = 'all .3s ease';
+  });
+});
+</script>
+</body>
+</html>
